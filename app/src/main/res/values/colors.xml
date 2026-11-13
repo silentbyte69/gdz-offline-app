@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="paid_badge">#FF9800</color>
+    <color name="status_done">#4CAF50</color>
+    <color name="status_error">#F44336</color>
+    <color name="cover_placeholder">#E0E0E0</color>
+    <color name="icon_background">#FFFFFF</color>
+
+    <!-- Material 3 color roles, light scheme (indigo seed) -->
+    <color name="md_primary">#4355B9</color>
+    <color name="md_on_primary">#FFFFFF</color>
+    <color name="md_primary_container">#DEE0FF</color>
+    <color name="md_on_primary_container">#00105C</color>
+    <color name="md_secondary">#5B5D72</color>
+    <color name="md_on_secondary">#FFFFFF</color>
+    <color name="md_secondary_container">#E0E1F9</color>
+    <color name="md_on_secondary_container">#181A2C</color>
+    <color name="md_tertiary">#77536D</color>
+    <color name="md_on_tertiary">#FFFFFF</color>
+    <color name="md_tertiary_container">#FFD7F1</color>
+    <color name="md_on_tertiary_container">#2D1228</color>
+    <color name="md_error">#BA1A1A</color>
+    <color name="md_on_error">#FFFFFF</color>
+    <color name="md_error_container">#FFDAD6</color>
+    <color name="md_on_error_container">#410002</color>
+    <color name="md_surface">#FAF8FF</color>
+    <color name="md_on_surface">#1B1B21</color>
+    <color name="md_surface_variant">#E3E1EC</color>
+    <color name="md_on_surface_variant">#46464F</color>
+    <color name="md_outline">#777680</color>
+    <color name="md_surface_container_low">#F4F3FA</color>
+    <color name="md_surface_container">#EFEDF4</color>
+    <color name="md_surface_container_high">#E9E7EF</color>
+</resources>

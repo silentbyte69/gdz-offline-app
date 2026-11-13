@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">ГДЗ офлайн</string>
+
+    <!-- Навигация -->
+    <string name="nav_catalog">Каталог</string>
+    <string name="nav_downloads">Загрузки</string>
+    <string name="nav_library">Библиотека</string>
+    <string name="nav_settings">Настройки</string>
+
+    <!-- Каталог -->
+    <string name="search_hint">Поиск по названию или автору</string>
+    <string name="all_grades">Все классы</string>
+    <string name="grade_format">%d класс</string>
+    <string name="subjects_title">Предметы</string>
+    <string name="books_count_format">%d учебников</string>
+    <string name="loading">Загрузка…</string>
+    <string name="error_load">Не удалось загрузить данные</string>
+    <string name="error_network">Нет подключения к интернету</string>
+    <string name="retry">Повторить</string>
+    <string name="catalog_offline_banner">Офлайн-копия каталога</string>
+    <string name="nothing_found">Ничего не найдено</string>
+    <string name="paid_badge">Платный</string>
+    <string name="refresh">Обновить</string>
+    <string name="catalog_search_results">Результаты поиска</string>
+
+    <!-- Учебник -->
+    <string name="all_parts">Все части</string>
+    <string name="download_part">Скачать часть</string>
+    <string name="download_all">Скачать всё</string>
+    <string name="download_task">Скачать задание</string>
+    <string name="cancel">Отменить</string>
+    <string name="paid_book_explanation">Этот решебник платный на gdz.ru — скачивание без аккаунта недоступно</string>
+    <string name="authors_label">Авторы</string>
+    <string name="publisher_label">Издательство</string>
+    <string name="year_label">Год</string>
+    <string name="tasks_count_format">Заданий: %d</string>
+    <string name="download_started">Загрузка добавлена в очередь</string>
+    <string name="download_already_running">Эта книга уже скачивается</string>
+    <string name="book_updated">Книга обновлена</string>
+    <string name="notification_permission_rationale">Без разрешения на уведомления прогресс загрузки не будет виден, но загрузки продолжат работать</string>
+
+    <!-- Задание -->
+    <string name="task_title_format">Задание %s</string>
+    <string name="task_paid_message">Платный решебник: gdz.ru требует токен аккаунта для показа этого задания</string>
+    <string name="task_video_only">Нет изображений решения — доступно только видеорешение</string>
+    <string name="task_offline_badge">Офлайн-копия</string>
+    <string name="page_counter_format">%1$d / %2$d</string>
+    <string name="task_load_error">Не удалось загрузить задание</string>
+
+    <!-- Загрузки -->
+    <string name="downloads_empty">Нет загрузок. Откройте учебник в каталоге и нажмите «Скачать часть»</string>
+    <string name="cancel_all">Отменить всё</string>
+    <string name="clear_finished">Очистить завершённые</string>
+    <string name="retry_errors">Повторить ошибки</string>
+    <string name="state_queued">В очереди</string>
+    <string name="state_running">Загрузка…</string>
+    <string name="state_paused">Пауза: нет сети</string>
+    <string name="state_done">Готово</string>
+    <string name="state_done_errors">Готово, ошибок: %d</string>
+    <string name="state_cancelled">Отменено</string>
+    <string name="job_progress_format">%1$d / %2$d • %3$d%%</string>
+    <string name="downloads_active_format">Активных загрузок: %d</string>
+
+    <!-- Библиотека -->
+    <string name="library_empty">Нет сохранённых книг. Скачайте учебник из каталога</string>
+    <string name="storage_usage_format">Занято: %s</string>
+    <string name="downloaded_tasks_format">Скачано номеров: %d</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_book_confirm">Удалить книгу «%s» со всеми скачанными решениями?</string>
+    <string name="book_deleted">Книга удалена</string>
+
+    <!-- Настройки -->
+    <string name="settings_theme">Тема</string>
+    <string name="theme_system">Системная</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="author_name">cuteslavicboy</string>
+    <string name="settings_show_paid">Показывать платные учебники</string>
+    <string name="settings_clear_cache">Очистить кэш каталога</string>
+    <string name="cache_cleared">Кэш каталога очищен</string>
+    <string name="settings_about">О приложении</string>
+    <string name="version_format">Версия %s</string>
+    <string name="about_author_format">Автор: %s</string>
+    <string name="about_source">Источник материалов: gdz.ru</string>
+    <string name="about_disclaimer">Приложение не аффилировано с gdz.ru. Все материалы принадлежат их авторам и используются в личных некоммерческих целях.</string>
+
+    <!-- Уведомления -->
+    <string name="notif_channel_downloads">Загрузки ГДЗ</string>
+    <string name="notif_title">Загрузка ГДЗ</string>
+    <string name="notif_progress_format">%1$d / %2$d заданий • %3$d%%</string>
+    <string name="notif_paused">Пауза: нет сети</string>
+    <string name="notif_done">Загрузка завершена</string>
+
+    <!-- Общее -->
+    <string name="ok">ОК</string>
+    <string name="close">Закрыть</string>
+    <string name="back">Назад</string>
+</resources>
