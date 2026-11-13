@@ -66,6 +66,19 @@ public class StructureAdapter extends RecyclerView.Adapter<StructureAdapter.Hold
         notifyDataSetChanged();
     }
 
+    /** Flat task list for search mode; null/empty query restores the tree. */
+    public void setSearchResults(List<TaskRef> tasks) {
+        rows.clear();
+        for (int i = 0; i < tasks.size(); i++) {
+            addTask(tasks.get(i), 0, "s" + i);
+        }
+        notifyDataSetChanged();
+    }
+
+    public void clearSearch() {
+        rebuild();
+    }
+
     private void rebuild() {
         rows.clear();
         for (int i = 0; i < roots.size(); i++) {

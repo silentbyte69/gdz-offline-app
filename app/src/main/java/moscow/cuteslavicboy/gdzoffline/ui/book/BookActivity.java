@@ -72,11 +72,15 @@ public class BookActivity extends AppCompatActivity {
     private RecyclerView structureList;
     private View loadingView;
     private View errorView;
+    private View structureEmpty;
+    private com.google.android.material.textfield.TextInputEditText taskSearch;
 
     private StructureAdapter structureAdapter;
     private List<BookNode> parts = new ArrayList<>();
+    private List<TaskRef> currentTasks = new ArrayList<>();
     private int selectedPart = 0;
     private Runnable pendingDownload;
+    private final Runnable searchRunnable = this::applySearch;
 
     private final ActivityResultLauncher<String> notificationPermission =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted -> {
@@ -141,6 +145,23 @@ public class BookActivity extends AppCompatActivity {
         structureList = findViewById(R.id.structure_list);
         loadingView = findViewById(R.id.loading);
         errorView = findViewById(R.id.error_state);
+        structureEmpty = findViewById(R.id.structure_empty);
+        taskSearch = findViewById(R.id.task_search_input);
+        taskSearch.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(android.text.Editable s) {
+                AppExecutors.get().removeMainCallbacks(searchRunnable);
+                AppExecutors.get().mainDelayed(searchRunnable, 300);
+            }
+        });
 
         structureAdapter = new StructureAdapter(new StructureAdapter.Listener() {
             @Override
@@ -262,17 +283,40 @@ public class BookActivity extends AppCompatActivity {
         selectedPart = index;
         List<BookNode> roots;
         List<TaskRef> rootTasks;
+        currentTasks = new ArrayList<>();
         if (index >= parts.size()) {
             roots = parts;
             rootTasks = Collections.emptyList();
+            for (BookNode part : parts) part.collectTasks(currentTasks);
             downloadButton.setText(R.string.download_all);
         } else {
             BookNode part = parts.get(index);
             roots = part.topics;
             rootTasks = part.tasks;
+            part.collectTasks(currentTasks);
             downloadButton.setText(R.string.download_part);
         }
         structureAdapter.setData(roots, rootTasks);
+        applySearch();
+    }
+
+    private void applySearch() {
+        String q = taskSearch.getText() != null
+                ? taskSearch.getText().toString().trim().toLowerCase(java.util.Locale.getDefault())
+                : "";
+        if (q.isEmpty()) {
+            structureAdapter.clearSearch();
+            structureEmpty.setVisibility(View.GONE);
+            return;
+        }
+        List<TaskRef> found = new ArrayList<>();
+        for (TaskRef t : currentTasks) {
+            if (t.displayTitle().toLowerCase(java.util.Locale.getDefault()).contains(q)) {
+                found.add(t);
+            }
+        }
+        structureAdapter.setSearchResults(found);
+        structureEmpty.setVisibility(found.isEmpty() ? View.VISIBLE : View.GONE);
     }
 
     private void enqueueSelected() {
@@ -333,6 +377,12 @@ public class BookActivity extends AppCompatActivity {
         super.onResume();
         refreshDownloadedKeys();
         updateJobSection();
+    }
+
+    @Override
+    protected void onDestroy() {
+        AppExecutors.get().removeMainCallbacks(searchRunnable);
+        super.onDestroy();
     }
 
     @Override

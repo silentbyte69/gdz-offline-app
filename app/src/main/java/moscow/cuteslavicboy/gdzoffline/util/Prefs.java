@@ -14,6 +14,7 @@ public final class Prefs {
     private static final String FILE = "settings";
     private static final String KEY_THEME = "theme";
     private static final String KEY_SHOW_PAID = "show_paid";
+    private static final String KEY_VIEWER_HINT_SEEN = "viewer_swipe_hint_seen";
 
     private final SharedPreferences sp;
 
@@ -35,6 +36,14 @@ public final class Prefs {
 
     public void setShowPaid(boolean show) {
         sp.edit().putBoolean(KEY_SHOW_PAID, show).apply();
+    }
+
+    public boolean isViewerHintSeen() {
+        return sp.getBoolean(KEY_VIEWER_HINT_SEEN, false);
+    }
+
+    public void setViewerHintSeen() {
+        sp.edit().putBoolean(KEY_VIEWER_HINT_SEEN, true).apply();
     }
 
     public void applyTheme() {
