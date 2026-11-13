@@ -10,5 +10,5 @@
 
 ### Авторы
 
-- Qwen 4 Preview
+- Qwen 4 Max Preview
 - cuteslavicboy (жирный вайбкодер)
